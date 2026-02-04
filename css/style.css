@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d0d0d; /* Background lebih gelap */
+  color: #f0f0f0; /* Warna teks umum */
+  line-height: 1.6;
+}
+
+/* Header & Navigasi */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background-color: rgba(
+    13,
+    13,
+    13,
+    0.9
+  ); /* Latar belakang header semi-transparan */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 3rem;
+  color: red; /* Aksen hijau Gemini AI */
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  color: #f0f0f0;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: red; /* Garis bawah hijau */
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+  width: 100%;
+}
+
+/* Hamburger Menu Icon */
+#menu-icon {
+  font-size: 3.6rem;
+  color: red; /* Warna hijau untuk ikon menu */
+  cursor: pointer;
+  display: none; /* Sembunyikan secara default */
+}
+
+/* General Section Styling */
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 4.5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #f0f0f0;
+}
+
+.heading span {
+  color: red; /* Aksen hijau */
+}
+
+/* Home Section */
+.home {
+  flex-direction: row; /* Default untuk desktop */
+  gap: 8rem;
+  padding-top: 15rem; /* Menyesuaikan dengan header fixed */
+}
+
+.home-content {
+  max-width: 60rem;
+  text-align: left;
+}
+
+.home-content h3 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  color: #b0b0b0;
+}
+
+.home-img img {
+  width: 35vw;
+  border-radius: 50%;
+  border: 0.2rem solid red; /* Border hijau Gemini */
+  box-shadow: 0 0 3rem #ff0000(76, 175, 80, 0.6); /* Glow hijau */
+  transition: 0.5s ease;
+}
+
+.home-img img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 5rem rgb(255, 0, 0);
+}
+
+/* Social Icons */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: transparent;
+  border: 0.2rem solid red;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: red;
+  margin: 2rem 1.5rem 3rem 0;
+  transition: 0.5s ease;
+}
+
+.social-icons a:hover {
+  background: red;
+  color: #0d0d0d;
+  box-shadow: 0 0 2rem red;
+  transform: translateY(-0.8rem);
+}
+
+/* Tombol Umum */
+.btn {
+  display: inline-block;
+  padding: 1.2rem 3.5rem;
+  background: red;
+  border-radius: 4rem;
+  box-shadow: 0 0 1.5rem rgba(76, 175, 80, 0.6);
+  font-size: 1.7rem;
+  color: #0d0d0d;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  background: red; /* Warna hijau lebih gelap saat hover */
+  box-shadow: 0 0 2.5rem rgba(76, 175, 80, 0.8);
+  transform: scale(1.05);
+}
+
+/* Typing Effect */
+.multiple-text {
+  color: red; /* Warna teks untuk typing effect */
+}
+
+/* Projects Section */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 3rem;
+}
+
+.project-box {
+  background-color: #1a1a1a;
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-box:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 0 3rem rgba(76, 175, 80, 0.6);
+  border-color: red;
+}
+
+.project-box i {
+  font-size: 6rem;
+  color: red;
+  margin-bottom: 1.5rem;
+}
+
+.project-box h3 {
+  font-size: 2.8rem;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.project-box p {
+  font-size: 1.6rem;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Agar deskripsi memenuhi ruang */
+}
+
+.project-box .btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+}
+
+/* Contact Section */
+.contact form {
+  max-width: 70rem;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.contact form .input-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: #f0f0f0;
+  background: #1a1a1a;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  resize: vertical;
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 1rem rgba(76, 175, 80, 0.4);
+}
+
+.contact form .input-box input:nth-child(even) {
+  margin-right: 0;
+}
+
+.contact form .btn {
+  margin-top: 2rem;
+  width: auto;
+  min-width: 20rem;
+}
+
+/* Responsiveness (Media Queries) */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 4%;
+  }
+  section {
+    padding: 10rem 4% 2rem;
+  }
+  .home {
+    flex-direction: column-reverse;
+    padding-top: 10rem;
+    gap: 5rem;
+  }
+  .home-content {
+    text-align: center;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  .home-content h3 {
+    font-size: 3rem;
+  }
+  .home-img img {
+    width: 50vw;
+  }
+  .social-icons {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block; /* Tampilkan ikon hamburger */
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4%;
+    background: rgba(13, 13, 13, 0.95);
+    border-top: 0.1rem solid rgba(76, 175, 80, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    display: none; /* Sembunyikan secara default */
+    transition: 0.3s ease;
+  }
+
+  .navbar.active {
+    display: block; /* Tampilkan saat class active ditambahkan */
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 65vw;
+    margin-top: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr; /* Satu kolom untuk HP */
+    max-width: 400px;
+  }
+
+  .contact form .input-box input {
+    width: 100%; /* Pastikan input full width di HP */
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .home-content h1 {
+    font-size: 4rem;
+  }
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+  .home-img img {
+    width: 80vw;
+  }
+}
+
+/* Typing Effect Cursor (from previous CSS) */
+.typing-text span::after {
+  content: "";
+  background-color: #0d0d0d; /* Background body */
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid #0d0d0d; /* Sesuaikan dengan background */
+  right: -8;
+  animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 3px solid red; /* Warna cursor */
+  }
+}
